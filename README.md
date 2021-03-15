@@ -7,6 +7,8 @@ In case of multiplous squares of the same size it choses the most upper one and 
 Program should accept multiple arguments. In this case, result will be divided by "\n". 
 In case zero arguments program has to read from standart input.
 
+Map generator: map.sh (perl map.sh 8 8 4 > map.txt)
+
 Example: map.txt 8 - height, o - obstacle, x - square
 
 8.ox
