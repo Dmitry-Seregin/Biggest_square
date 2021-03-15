@@ -6,7 +6,6 @@ void	ft_func(int desc, char *argv)
 	char	*buff;
 	int		**mass;
 	int		i;
-
 	i = 0;
 	rules = (t_rules *)malloc(sizeof(t_rules));
 	if ((desc = ft_check(desc, argv, rules)) == -1)

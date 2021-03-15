@@ -4,7 +4,6 @@ int	ft_check_height(char *mass, int a)
 {
 	int count;
 	int visota;
-
 	visota = 0;
 	count = a;
 	a = 0;
@@ -42,7 +41,6 @@ int	ft_check(int desc, char *argv, t_rules *rules)
 	char	height;
 	char	mass[1024];
 	int		a;
-
 	height = 'L';
 	a = 0;
 	while (height != '\n')

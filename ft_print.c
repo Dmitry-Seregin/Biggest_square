@@ -52,8 +52,11 @@ void	ft_print_fin(char *buff, t_rules *rules)
 	{
 		ft_print_x(rules);
 		buff += rules->nbr;
-		ft_print_point(between, buff);
-		buff = buff + between;
+		if (point != 1)
+		{
+			ft_print_point(between, buff);
+			buff = buff + between;
+		}
 		point--;
 	}
 	buff = ft_print_ox(end, buff);
