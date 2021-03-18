@@ -6,7 +6,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define MAPERR write(2, "map error\n", 10)
+# define MAPERR write(2, "map error", 10)
 
 typedef struct		s_rules
 {

@@ -43,7 +43,7 @@ int	ft_check(int desc, char *argv, t_rules *rules)
 	int		a;
 	height = 'L';
 	a = 0;
-	while (height != '\n')
+	while (height != '\n')										//Count char in the first string
 	{
 		read(desc, &height, 1);
 		mass[a] = height;
@@ -52,13 +52,13 @@ int	ft_check(int desc, char *argv, t_rules *rules)
 	mass[a] = '\0';
 	if (a < 4)
 		return (-1);
-	if ((rules->height = ft_check_height(mass, a)) == -1)
+	if ((rules->height = ft_check_height(mass, a)) == -1)		//Check height validity
 		return (-1);
 	rules->point = mass[a - 4];
 	rules->o = mass[a - 3];
 	rules->x = mass[a - 2];
 	rules->width = ft_check_width(desc);
 	desc = open(argv, O_RDONLY);
-	read(desc, &height, a);
+	read(desc, &height, a);										//Moving pointer to the start of the map
 	return (desc);
 }

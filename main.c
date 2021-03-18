@@ -6,17 +6,17 @@ int	main(int argc, char **argv)
 	int	desc;
 
 	ind = 1;
-	if (argc == 1)
+	if (argc == 1)								//Choosing between standard and file input
 	{
-		desc = ft_origin_input();
+		desc = ft_origin_input();				//Creating a file from origin input
 		ft_func(desc, "map");
 	}
 	else
 	{
-		while (ind < argc)
+		while (ind < argc)						//Loop for multiple arguments
 		{
-			desc = ft_file_input(argv[ind]);
-			ft_func(desc, argv[ind]);
+			if ((desc = ft_file_input(argv[ind])) > 0)
+				ft_func(desc, argv[ind]);		//Main process
 			if (ind != (argc - 1))
 				write(1, "\n\n", 2);
 			ind++;

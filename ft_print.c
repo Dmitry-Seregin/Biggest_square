@@ -42,10 +42,13 @@ void	ft_print_fin(char *buff, t_rules *rules)
 	int point;
 	int between;
 
-	between = rules->width - rules->nbr;
+	if (rules->nbr !=0)
+		between = rules->width - rules->nbr;							//Count char beetween lines of X
+	else
+		between = 0;
 	point = rules->nbr;
-	start = rules->width * rules->end_i + rules->end_j;
-	end = rules->width * (rules->height - rules->nbr - rules->end_i)
+	start = rules->width * rules->end_i + rules->end_j;					//Count char before starting of the cube
+	end = rules->width * (rules->height - rules->nbr - rules->end_i)	//Count char after end of the cube
 	+ (between - rules->end_j);
 	buff = ft_print_ox(start, buff);
 	while (point > 0)

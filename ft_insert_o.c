@@ -1,17 +1,5 @@
 #include "bsq.h"
 
-int		ft_strlen(char *buff)
-{
-	int ind;
-
-	ind = 0;
-	while (buff[ind] != '\n')
-	{
-		ind++;
-	}
-	return (ind);
-}
-
 char	*ft_mass_o(int count, int **mass, char *buff, t_rules *rules)
 {
 	while (*buff)
@@ -45,14 +33,16 @@ char	*ft_insert_o(int desc, t_rules *rules, int **mass)
 	int		count;
 	int		size;
 	char	*buff;
+	char	check;
 	count = 0;
 	size = rules->width * rules->height;
-	buff = malloc((size) * sizeof(char));
+	buff = malloc((size) * sizeof(char));							//Moving map.txt to the *char
 	if (buff == NULL)
 		return (NULL);
-	read(desc, buff, size);
-
-	buff[size - 1] = '\0';
+	read(desc, buff, size);											//Check map error of the last line
+	if (read(desc, &check, 1) > 0)
+		return (NULL);
+	buff[size - 1] = '\0';											//Set end of string
 	if ((buff = ft_mass_o(count, mass, buff, rules)) == NULL)
 		return NULL;
 	buff -= (size - 1);

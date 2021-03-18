@@ -6,7 +6,7 @@ int	**ft_malloc(t_rules *rules)
 	int p;
 
 	p = rules->height;
-	mass = malloc((rules->height) * sizeof(int*));
+	mass = malloc((rules->height) * sizeof(int*));				//Allocating memory for *int[][]
 	if (mass == NULL)
 		return (NULL);
 	while (p > 0)

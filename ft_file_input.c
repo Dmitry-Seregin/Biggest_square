@@ -4,5 +4,7 @@ int	ft_file_input(char *argv)
 {
 	int desc;
 	desc = open(argv, O_RDONLY);
+	if (desc < 0)
+		MAPERR;
 	return (desc);
 }
